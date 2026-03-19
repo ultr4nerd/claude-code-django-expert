@@ -139,12 +139,12 @@ Always use the same PostgreSQL version in dev and prod.
 - Pre-commit hooks: ruff, mypy, django-upgrade.
 
 ## Skills & Agents
-Use `/skill:django-new-app` when creating a new app.
-Use `/skill:django-new-model` when creating a new model.
-Use `/skill:django-new-api` when creating a new API endpoint.
-Use `/skill:django-migration-check` before committing migrations.
-Use `/skill:django-security-audit` for security reviews.
-Use `/skill:django-performance` for performance optimization.
+Use `/django-new-app` when creating a new app.
+Use `/django-new-model` when creating a new model.
+Use `/django-new-api` when creating a new API endpoint.
+Use `/django-migration-check` before committing migrations.
+Use `/django-security-audit` for security reviews.
+Use `/django-performance` for performance optimization.
 Use `@django-reviewer` for code reviews.
 Use `@django-tester` to generate tests.
 Use `@django-debugger` to debug issues.

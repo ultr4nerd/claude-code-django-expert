@@ -20,7 +20,7 @@ Esto instala un solo archivo en tu máquina. No consume tokens extra en tus sesi
 Abre Claude Code en tu proyecto y ejecuta:
 
 ```
-/skill:setup-django-expert
+/setup-django-expert
 ```
 
 El skill se encarga de todo:
@@ -39,7 +39,7 @@ Repite el paso 2 en cada proyecto Django donde lo necesites.
 |---|---|---|
 | `CLAUDE.md` | 1 | Instrucciones del stack Django — 12-factor, convenciones, comandos |
 | Rules | 8 | Se auto-activan al editar models, views, serializers, tests, templates, settings, migrations, security |
-| Skills | 8 | `/skill:django-new-app`, `django-new-model`, `django-new-api`, `django-review`, `django-debug`, `django-migration-check`, `django-security-audit`, `django-performance` |
+| Skills | 8 | `/django-new-app`, `django-new-model`, `django-new-api`, `django-review`, `django-debug`, `django-migration-check`, `django-security-audit`, `django-performance` |
 | Agents | 3 | `@django-reviewer`, `@django-tester`, `@django-debugger` |
 | Hooks | 2 | Auto-ruff al guardar `.py`, protección contra migraciones destructivas |
 | Knowledge | 1 | Guía modernizada Two Scoops of Django (~4,800 líneas) — opcional |
@@ -63,14 +63,14 @@ Si instalaste el skill global (paso 1) pero estás en un proyecto FastAPI, JS, o
 ## Uso después de instalar
 
 ```
-/skill:django-new-app          → Scaffoldear una nueva app Django
-/skill:django-new-model        → Crear un modelo con buenas prácticas
-/skill:django-new-api          → Crear un endpoint DRF
-/skill:django-review           → Code review
-/skill:django-debug            → Debuggear un issue
-/skill:django-migration-check  → Verificar migraciones antes de commit
-/skill:django-security-audit   → Auditoría de seguridad
-/skill:django-performance      → Optimización de performance
+/django-new-app          → Scaffoldear una nueva app Django
+/django-new-model        → Crear un modelo con buenas prácticas
+/django-new-api          → Crear un endpoint DRF
+/django-review           → Code review
+/django-debug            → Debuggear un issue
+/django-migration-check  → Verificar migraciones antes de commit
+/django-security-audit   → Auditoría de seguridad
+/django-performance      → Optimización de performance
 
 @django-reviewer               → Agente de code review
 @django-tester                 → Agente de generación de tests
@@ -90,7 +90,7 @@ Target: **Django 6.0.3** (marzo 2026) con:
 
 ## Actualizar
 
-Para actualizar el toolkit en un proyecto, simplemente ejecuta `/skill:setup-django-expert` de nuevo. Reemplazará las rules, skills y agents Django con la versión más reciente del repo, y actualizará la sección Django del CLAUDE.md.
+Para actualizar el toolkit en un proyecto, simplemente ejecuta `/setup-django-expert` de nuevo. Reemplazará las rules, skills y agents Django con la versión más reciente del repo, y actualizará la sección Django del CLAUDE.md.
 
 ## License
 
