@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file=\"$CLAUDE_FILE_PATH\"; if [ -n \"$file\" ] && echo \"$file\" | grep -qE '\\.py$'; then echo \"Running ruff on $file...\"; ruff check --fix --quiet \"$file\" 2>/dev/null; ruff format --quiet \"$file\" 2>/dev/null; echo \"Ruff check and format complete.\"; fi",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd=\"$CLAUDE_TOOL_INPUT\"; if echo \"$cmd\" | grep -qE 'migrate\\b' && ! echo \"$cmd\" | grep -qE '(showmigrations|makemigrations|--plan|--check|sqlmigrate|--fake)'; then echo 'WARNING: About to run migrations. Verify migration files have been reviewed. Use --plan to preview first.'; fi; if echo \"$cmd\" | grep -qE 'flush\\b|reset_db'; then echo 'DANGER: This will destroy all data in the database!'; exit 1; fi",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}
