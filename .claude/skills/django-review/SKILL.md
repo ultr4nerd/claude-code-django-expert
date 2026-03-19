@@ -1,6 +1,7 @@
 ---
 name: django-review
 description: Review Django code for best practices, security, performance, and modern patterns. Automatically activated when reviewing Django files.
+allowed-tools: Read, Grep, Glob
 ---
 
 # Django Code Review Checklist

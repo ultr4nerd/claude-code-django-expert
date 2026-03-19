@@ -1,3 +1,10 @@
+---
+name: setup-django-expert
+description: Configure the current project with Django 6.x expert tools (rules, skills, agents, hooks) from GitHub. Use when setting up a Django project.
+disable-model-invocation: true
+allowed-tools: Read, Write, Bash, Grep, Glob
+---
+
 # Setup Django Expert
 
 Configures the current project with Django 6.x expert tools from the [claude-code-django-expert](https://github.com/ultr4nerd/claude-code-django-expert) repository.

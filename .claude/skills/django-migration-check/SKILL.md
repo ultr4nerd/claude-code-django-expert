@@ -2,6 +2,7 @@
 name: django-migration-check
 description: Check and validate Django migrations for safety and correctness before deployment
 disable-model-invocation: true
+allowed-tools: Read, Bash, Grep, Glob
 ---
 
 # Django Migration Safety Check

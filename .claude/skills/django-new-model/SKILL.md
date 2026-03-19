@@ -2,6 +2,8 @@
 name: django-new-model
 description: Create a new Django model following modern best practices
 disable-model-invocation: true
+argument-hint: "[ModelName]"
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # Create a New Django Model

@@ -140,3 +140,7 @@ status = models.CharField(max_length=20, choices=Status, db_default=Status.DRAFT
 - Prioritize security > correctness > performance > style
 - Reference Django 6.x features and patterns specifically
 - Check that tests exist for all new/changed logic
+
+## Memory
+- Before reviewing, check your memory for recurring issues and patterns in this project
+- After reviewing, save new patterns or recurring issues to your memory for future reviews

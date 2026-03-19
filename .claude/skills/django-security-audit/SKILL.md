@@ -2,6 +2,7 @@
 name: django-security-audit
 description: Perform a security audit on a Django project
 disable-model-invocation: true
+allowed-tools: Read, Bash, Grep, Glob
 ---
 
 # Django Security Audit

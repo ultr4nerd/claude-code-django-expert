@@ -2,6 +2,7 @@
 name: django-performance
 description: Analyze and optimize Django application performance
 disable-model-invocation: true
+allowed-tools: Read, Bash, Grep, Glob
 ---
 
 # Django Performance Analysis & Optimization

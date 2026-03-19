@@ -301,3 +301,7 @@ def authenticated_api_client(api_client, user):
 - Prefer `factory_boy` over `setUp` data
 - Use `@pytest.mark.django_db(transaction=True)` only when testing transaction behavior
 - Mark slow tests with `@pytest.mark.slow`
+
+## Memory
+- Before writing tests, check your memory for established testing patterns in this project
+- After writing tests, save new factory patterns or testing conventions to your memory

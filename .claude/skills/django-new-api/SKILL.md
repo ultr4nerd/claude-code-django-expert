@@ -2,6 +2,8 @@
 name: django-new-api
 description: Create a new REST API endpoint following modern DRF best practices
 disable-model-invocation: true
+argument-hint: "[ModelName or endpoint-name]"
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # Create a New REST API Endpoint

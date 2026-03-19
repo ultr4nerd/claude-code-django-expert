@@ -2,6 +2,8 @@
 name: django-new-app
 description: Create a new Django app following modern best practices and cookiecutter-django conventions
 disable-model-invocation: true
+argument-hint: "[app-name]"
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # Create a New Django App

@@ -1,6 +1,7 @@
 ---
 name: django-debug
 description: Debug Django issues - ORM queries, migrations, template errors, async problems. Use when debugging Django applications.
+allowed-tools: Read, Bash, Grep, Glob
 ---
 
 # Django Debugging Guide
