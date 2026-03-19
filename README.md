@@ -2,9 +2,9 @@
 
 Django 6.x expert toolkit for [Claude Code](https://code.claude.com). Makes Claude Code an expert Django developer with modern best practices from Two Scoops of Django, Twelve-Factor App, and Cookiecutter Django.
 
-## Setup (2 pasos)
+## Setup (2 steps)
 
-### Paso 1: Instalar el skill globalmente (una sola vez)
+### Step 1: Install the skill globally (once)
 
 ```bash
 mkdir -p ~/.claude/skills/setup-django-expert
@@ -13,84 +13,84 @@ curl -sL https://raw.githubusercontent.com/ultr4nerd/claude-code-django-expert/m
   -o ~/.claude/skills/setup-django-expert/SKILL.md
 ```
 
-Esto instala un solo archivo en tu máquina. No consume tokens extra en tus sesiones.
+This installs a single file on your machine. It adds zero extra tokens to your sessions.
 
-### Paso 2: Ejecutar en tu proyecto Django
+### Step 2: Run it in your Django project
 
-Abre Claude Code en tu proyecto y ejecuta:
+Open Claude Code in your project and run:
 
 ```
 /setup-django-expert
 ```
 
-El skill se encarga de todo:
-- Clona este repo temporalmente
-- Copia rules, skills, agents y hooks a `.claude/` de tu proyecto
-- **Si ya tienes un `CLAUDE.md`**, agrega las instrucciones Django al final sin borrar nada
-- **Si ya tienes `.claude/settings.json`** con hooks, los mergea sin duplicar
-- Te pregunta si quieres la knowledge base de Two Scoops (~132KB)
-- Limpia el clon temporal
+The skill handles everything:
+- Clones this repo temporarily
+- Copies rules, skills, agents, and hooks into your project's `.claude/` directory
+- **If you already have a `CLAUDE.md`**, appends Django instructions at the end without deleting anything
+- **If you already have `.claude/settings.json`** with hooks, merges them without duplicating
+- Asks if you want the Two Scoops knowledge base (~132KB)
+- Cleans up the temp clone
 
-Repite el paso 2 en cada proyecto Django donde lo necesites.
+Repeat step 2 in every Django project where you need it.
 
-## Qué se instala en tu proyecto
+## What gets installed
 
-| Componente | Cantidad | Descripción |
+| Component | Count | Description |
 |---|---|---|
-| `CLAUDE.md` | 1 | Instrucciones del stack Django — 12-factor, convenciones, comandos |
-| Rules | 8 | Se auto-activan al editar models, views, serializers, tests, templates, settings, migrations, security |
+| `CLAUDE.md` | 1 | Project instructions — Django stack, 12-factor, conventions |
+| Rules | 8 | Auto-activate for models, views, serializers, tests, templates, settings, migrations, security |
 | Skills | 8 | `/django-new-app`, `django-new-model`, `django-new-api`, `django-review`, `django-debug`, `django-migration-check`, `django-security-audit`, `django-performance` |
 | Agents | 3 | `@django-reviewer`, `@django-tester`, `@django-debugger` |
-| Hooks | 2 | Auto-ruff al guardar `.py`, protección contra migraciones destructivas |
-| Knowledge | 1 | Guía modernizada Two Scoops of Django (~4,800 líneas) — opcional |
+| Hooks | 2 | Auto-ruff on `.py` save, destructive migration protection |
+| Knowledge | 1 | Modernized Two Scoops of Django guide (~4,800 lines) — optional |
 
-## Seguro para proyectos existentes
+## Safe for existing projects
 
-El skill **nunca sobreescribe** tu configuración existente:
+The skill **never overwrites** your existing configuration:
 
-- **CLAUDE.md** → Si existe, las instrucciones Django se **agregan al final**. Si ya tiene sección Django, solo actualiza esa sección.
-- **Rules** → Solo agrega rules Django (`models.md`, `views.md`, etc.). Tus rules como `code-style.md` o `frontend.md` no se tocan.
-- **Skills/Agents** → Solo agrega los prefijados con `django-`. Tus otros skills y agents quedan intactos.
-- **settings.json** → Mergea los hooks Django con los existentes. Tus hooks de ESLint, Prettier, etc. se preservan.
+- **CLAUDE.md** — If it exists, Django instructions are **appended** at the end. If it already has a Django section, only that section is updated.
+- **Rules** — Only adds Django rules (`models.md`, `views.md`, etc.). Your rules like `code-style.md` or `frontend.md` are untouched.
+- **Skills/Agents** — Only adds `django-` prefixed ones. Your other skills and agents remain intact.
+- **settings.json** — Merges Django hooks with existing ones. Your ESLint, Prettier, etc. hooks are preserved.
 
-## Cero impacto en proyectos no-Django
+## Zero impact on non-Django projects
 
-Si instalaste el skill global (paso 1) pero estás en un proyecto FastAPI, JS, o Go:
-- El skill `setup-django-expert` existe pero **no se ejecuta automáticamente** — solo cuando tú lo invocas
-- No se agregan tokens extra a tu sesión
-- Las skills y agents de Django no se cargan a menos que los invoques explícitamente
+If you installed the global skill (step 1) but you're in a FastAPI, JS, or Go project:
+- The `setup-django-expert` skill exists but **does not run automatically** — only when you invoke it
+- No extra tokens are added to your session
+- Django skills and agents don't load unless you explicitly invoke them
 
-## Uso después de instalar
+## Usage after installation
 
 ```
-/django-new-app          → Scaffoldear una nueva app Django
-/django-new-model        → Crear un modelo con buenas prácticas
-/django-new-api          → Crear un endpoint DRF
+/django-new-app          → Scaffold a new Django app
+/django-new-model        → Create a new model with best practices
+/django-new-api          → Create a DRF API endpoint
 /django-review           → Code review
-/django-debug            → Debuggear un issue
-/django-migration-check  → Verificar migraciones antes de commit
-/django-security-audit   → Auditoría de seguridad
-/django-performance      → Optimización de performance
+/django-debug            → Debug an issue
+/django-migration-check  → Verify migrations before commit
+/django-security-audit   → Security audit
+/django-performance      → Performance optimization
 
-@django-reviewer               → Agente de code review
-@django-tester                 → Agente de generación de tests
-@django-debugger               → Agente de debugging
+@django-reviewer         → Code review agent
+@django-tester           → Test generation agent
+@django-debugger         → Debugging agent
 ```
 
-## Django Version
+## Django version
 
-Target: **Django 6.0.3** (marzo 2026) con:
+Target: **Django 6.0.3** (March 2026) with:
 - CSP middleware (built-in)
 - Template Partials (`{% partialdef %}`)
 - Background Tasks framework
-- `GeneratedField` y `db_default`
+- `GeneratedField` and `db_default`
 - Composite Primary Keys
-- Async ORM (maduro)
+- Async ORM (mature)
 - `LoginRequiredMiddleware`
 
-## Actualizar
+## Updating
 
-Para actualizar el toolkit en un proyecto, simplemente ejecuta `/setup-django-expert` de nuevo. Reemplazará las rules, skills y agents Django con la versión más reciente del repo, y actualizará la sección Django del CLAUDE.md.
+To update the toolkit in a project, run `/setup-django-expert` again. It will replace Django rules, skills, and agents with the latest version from the repo, and update the Django section of your CLAUDE.md.
 
 ## License
 
